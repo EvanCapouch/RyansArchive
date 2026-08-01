@@ -1,0 +1,441 @@
+/* =======================================
+   GENERAL
+======================================= */
+
+html, body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    background:#202020;
+    color:#e0e0e0;
+
+    font-family:Consolas, monospace;
+}
+
+a{
+    color:#6cb4ff;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #333;
+    margin:20px 0;
+}
+
+/* =======================================
+   WINDOW
+======================================= */
+
+.viewer{
+
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    background:#111;
+
+}
+
+.viewerTitle{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:10px 14px;
+
+    background:linear-gradient(#303030,#1a1a1a);
+
+    border-bottom:1px solid #555;
+
+    flex-shrink:0;
+
+}
+
+/* =======================================
+   BUTTONS
+======================================= */
+
+.windowButtons{
+
+    display:flex;
+    gap:6px;
+
+}
+
+.button{
+
+    width:22px;
+    height:22px;
+
+    border:1px solid #666;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+    user-select:none;
+
+}
+
+.button:hover{
+
+    background:#3b3b3b;
+
+}
+
+/* =======================================
+   MENU BAR
+======================================= */
+
+.menuBar{
+
+    display:flex;
+    align-items:center;
+
+    background:#181818;
+
+    padding:8px 12px;
+
+    border-bottom:1px solid #444;
+
+    flex-shrink:0;
+
+}
+
+.menuBar span{
+
+    margin-right:24px;
+
+    cursor:pointer;
+
+}
+
+.menuBar span:hover{
+
+    text-decoration:underline;
+
+}
+
+/* =======================================
+   MAIN AREA
+======================================= */
+
+.mainArea{
+
+    display:flex;
+
+    flex:1;
+
+    overflow:hidden;
+
+}
+
+/* =======================================
+   SIDEBAR
+======================================= */
+
+.sidebar{
+
+    width:220px;
+
+    background:#181818;
+
+    border-right:1px solid #444;
+
+    padding:15px;
+
+    box-sizing:border-box;
+
+}
+
+.sidebar h3{
+
+    margin:0 0 15px 0;
+
+    color:white;
+
+}
+
+.sidebar a{
+
+    display:flex;
+    align-items:center;
+
+    padding:8px;
+
+    border-radius:4px;
+
+    color:white;
+
+}
+
+.sidebar a:hover{
+
+    background:#2c2c2c;
+
+    text-decoration:none;
+
+}
+
+.navIcon{
+
+    width:28px;
+
+    text-align:center;
+
+    flex-shrink:0;
+
+}
+
+/* =======================================
+   CONTENT
+======================================= */
+
+.viewerContent{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:25px;
+
+}
+
+.viewerContent h1{
+
+    margin-top:0;
+
+}
+
+/* =======================================
+   EXPLORER TABLE
+======================================= */
+
+.explorer{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+.explorer th{
+
+    text-align:left;
+
+    padding:10px;
+
+    border-bottom:2px solid #555;
+
+}
+
+.explorer td{
+
+    padding:10px;
+
+    border-bottom:1px solid #222;
+
+}
+
+.explorer tr:hover{
+
+    background:#202020;
+
+}
+
+/* =======================================
+   IMAGE VIEWER
+======================================= */
+
+.viewerInfo{
+
+    background:#181818;
+
+    border:1px solid #333;
+
+    padding:18px;
+
+    margin-bottom:25px;
+
+    border-radius:6px;
+
+}
+
+.viewerImage{
+
+    text-align:center;
+
+    padding:35px 0;
+
+}
+
+.viewerImage img{
+
+    max-width:95%;
+
+    border:1px solid #666;
+
+}
+
+.viewerBottom{
+
+    margin-top:20px;
+
+    border-top:1px solid #333;
+
+    padding-top:15px;
+
+}
+
+/* =======================================
+   STATUS BAR
+======================================= */
+
+.statusBar{
+
+    background:#181818;
+
+    border-top:1px solid #444;
+
+    padding:8px 12px;
+
+    color:#888;
+
+    font-size:14px;
+
+    flex-shrink:0;
+
+}
+
+/* =======================================
+   NOTEPAD
+======================================= */
+
+.notepadWindow{
+
+    background:#1b1b1b;
+
+    border:1px solid #444;
+
+    padding:35px;
+
+    max-width:900px;
+
+    margin:auto;
+
+    box-shadow:0 0 18px rgba(0,0,0,.45);
+
+}
+
+.notepadText{
+
+    margin:0;
+
+    white-space:pre-wrap;
+
+    font-family:Consolas, monospace;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:#ececec;
+
+}
+
+/* ===========================
+   DROPDOWN MENUS
+=========================== */
+
+.menuBar{
+    display:flex;
+    background:#181818;
+    border-bottom:1px solid #444;
+    user-select:none;
+}
+
+.menuItem{
+
+    position:relative;
+
+    padding:8px 14px;
+
+    cursor:default;
+
+}
+
+.menuItem:hover{
+
+    background:#2d2d2d;
+
+}
+
+.dropdown{
+
+    display:none;
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+    min-width:220px;
+
+    background:#202020;
+
+    border:1px solid #555;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.5);
+
+    z-index:1000;
+
+}
+
+.menuItem:hover .dropdown{
+
+    display:block;
+
+}
+
+.dropdown a{
+
+    display:block;
+
+    padding:8px 14px;
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+.dropdown a:hover{
+
+    background:#2b579a;
+
+}
+
+.dropdown hr{
+
+    margin:4px 0;
+
+    border:none;
+
+    border-top:1px solid #444;
+
+}

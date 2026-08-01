@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Ryan's Archive</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="viewer">
+
+    <!-- Title Bar -->
+
+    <div class="viewerTitle">
+
+        <span>📁 Ryan's Archive</span>
+
+        <div class="windowButtons">
+
+            <div class="button">—</div>
+            <div class="button">□</div>
+            <div class="button">✕</div>
+
+        </div>
+
+    </div>
+
+    <!-- Menu -->
+
+    <div class="menuBar">
+
+        <span>File</span>
+        <span>Edit</span>
+        <span>View</span>
+        <span>Help</span>
+
+    </div>
+
+    <!-- Explorer -->
+
+    <div class="mainArea">
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <h3>Archive</h3>
+
+            <a href="index.html">
+                <span class="navIcon">🏠</span>
+                Home (X)
+            </a>
+
+            <a href="logs/AboutLogs.html">
+                <span class="navIcon">📄</span>
+                Logs
+            </a>
+
+            <a href="images/indexS.html">
+                <span class="navIcon">🖼</span>
+                Images
+            </a>
+
+            <a href="downloads/indexD.html">
+                <span class="navIcon">📥</span>
+                Downloads
+            </a>
+
+            <a href="about/about.html">
+                <span class="navIcon">ℹ</span>
+                About
+            </a>
+
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="viewerContent">
+
+            <h1>Archive</h1>
+
+            <p>
+                If something happens to my computer, at least this won't disappear.
+            </p>
+
+            <hr>
+
+            <table class="explorer">
+
+                <tr>
+
+                    <th>Name</th>
+                    <th>Date Modified</th>
+                    <th>Type</th>
+                    <th>Size</th>
+
+                </tr>
+
+                <tr data-status="LOG_001.txt • Text Document • 1 KB">
+
+                    <td>📄 <a href="logs/log001.html">LOG_001.txt</a></td>
+                    <td>05/15/2026 8:42 PM</td>
+                    <td>Text Document</td>
+                    <td>1 KB</td>
+
+                </tr>
+
+                <tr data-status="LOG_002.txt • Text Document • 1 KB">
+
+                    <td>📄 <a href="logs/log002.html">LOG_002.txt</a></td>
+                    <td>05/17/2026 11:08 PM</td>
+                    <td>Text Document</td>
+                    <td>1 KB</td>
+
+                </tr>
+
+                <tr data-status="LOG_003.txt • Text Document • 2 KB">
+
+                    <td>📄 <a href="logs/log003.html">LOG_003.txt</a></td>
+                    <td>05/18/2026 1:14 AM</td>
+                    <td>Text Document</td>
+                    <td>2 KB</td>
+
+                </tr>
+
+                <tr data-status="PHOTO_ARCHIVE • File Folder">
+
+                    <td>📁 <a href="images/indexS.html">PHOTO_ARCHIVE</a></td>
+                    <td>05/18/2026 1:34 AM</td>
+                    <td>File Folder</td>
+                    <td>14 KB</td>
+
+                </tr>
+
+                <tr data-status="AboutThisArchive.txt • Text Document • 1 KB">
+
+                    <td>📄 <a href="about/about.html">AboutThisArchive.txt</a></td>
+                    <td>05/14/2026 3:45 PM</td>
+                    <td>Text Document</td>
+                    <td>1 KB</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="statusBar" id="statusBar">
+
+        5 Items
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
