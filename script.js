@@ -33,11 +33,11 @@ function searchArchive(){
 
         case "images":
         case "photo_archive":
-            window.location.href="images/index.html";
+            window.location.href="images/indexS.html";
             break;
 
         case "downloads":
-            window.location.href="downloads/index.html";
+            window.location.href="downloads/indexD.html";
             break;
 
         case "about":
