@@ -25,35 +25,43 @@ function searchArchive(){
         .trim()
         .toLowerCase();
 
+    // Determine whether we're in a subfolder.
+    const root = window.location.pathname.includes("/images/") ||
+                window.location.pathname.includes("/downloads/") ||
+                window.location.pathname.includes("/logs/") ||
+                window.location.pathname.includes("/about/") ||
+                window.location.pathname.includes("/data/")
+                ? "../"
+                : "";
     switch(query){
 
         case "logs":
-            window.location.href="logs/AboutLogs.html";
+            window.location.href = root + "logs/AboutLogs.html";
             break;
 
         case "images":
         case "photo_archive":
-            window.location.href="images/indexS.html";
+            window.location.href= root + "images/indexS.html";
             break;
 
         case "downloads":
-            window.location.href="downloads/indexD.html";
+            window.location.href= root + "downloads/indexD.html";
             break;
 
         case "about":
-            window.location.href="about/about.html";
+            window.location.href= root + "about/about.html";
             break;
 
         case "memory":
-            window.location.href="data/memory.html";
+            window.location.href= root + "data/memory.html";
             break;
 
         case "root":
-            window.location.href="data/root.html";
+            window.location.href= root + "data/root.html";
             break;
 
         default:
-            window.location.href = "search.html";
+            window.location.href= root + "search.html";
 
     }
 
