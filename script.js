@@ -53,8 +53,30 @@ function searchArchive(){
             break;
 
         default:
-            alert("No matching files were found.");
+            window.location.href = "search.html";
 
     }
 
 }
+
+// Allow the Enter key to perform a search
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const search = document.getElementById("searchInput");
+
+    if(search){
+
+        search.addEventListener("keypress", function(event){
+
+            if(event.key === "Enter"){
+
+                searchArchive();
+
+            }
+
+        });
+
+    }
+
+});
