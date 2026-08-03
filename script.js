@@ -16,3 +16,45 @@ rows.forEach(row => {
     });
 
 });
+
+function searchArchive(){
+
+    const query = document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+    switch(query){
+
+        case "logs":
+            window.location.href="logs/AboutLogs.html";
+            break;
+
+        case "images":
+        case "photo_archive":
+            window.location.href="images/index.html";
+            break;
+
+        case "downloads":
+            window.location.href="downloads/index.html";
+            break;
+
+        case "about":
+            window.location.href="about/about.html";
+            break;
+
+        case "memory":
+            window.location.href="data/memory.html";
+            break;
+
+        case "root":
+            window.location.href="data/root.html";
+            break;
+
+        default:
+            alert("No matching files were found.");
+
+    }
+
+}
