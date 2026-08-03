@@ -24,15 +24,7 @@ function searchArchive(){
         .value
         .trim()
         .toLowerCase();
-
-    // Determine whether we're in a subfolder.
-    const root = window.location.pathname.includes("/images/") ||
-                window.location.pathname.includes("/downloads/") ||
-                window.location.pathname.includes("/logs/") ||
-                window.location.pathname.includes("/about/") ||
-                window.location.pathname.includes("/data/")
-                ? "../"
-                : "";
+    const root = "/RyansArchive/";
     switch(query){
 
         case "logs":
