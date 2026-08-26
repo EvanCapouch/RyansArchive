@@ -34,27 +34,122 @@
     <!-- Menu -->
 
     <div class="menuBar">
-    <div class="menuItem">File
-    <div class="dropdown">
-    <a href="">Return to home</a>
-    <hr>
-    <a href="">⟳ Refresh</a>
-    <hr>
-    <a href="">Close</a>
-    </div>
-    </div>
-    <div class="menuItem">Edit</div>
-    <div class="menuItem">Format</div>
-    <div class="menuItem">View</div>
-    <div class="menuItem">Help
-    <div class="dropdown">
-    <a href="about/about.html">About Ryan's Archive</a>
-    <hr>
-    <a href="logs/AboutLogs.html">About logs</a>
-    <hr>
-    <a href="about/Ryan.html">About Ryan</a>
-    </div>
-    </div>
+
+        <!-- File -->
+
+        <div class="menuItem">
+            File
+
+            <div class="dropdown">
+
+                <a href="index.html">Return to Home</a>
+
+                <hr>
+
+                <div class="dropdownItem" onclick="closeArchive()">
+                    Close
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Edit -->
+
+        <div class="menuItem">
+            Edit
+
+            <div class="dropdown">
+
+                <div class="dropdownItem" onclick="copySelectedText()">
+                    Copy
+                </div>
+
+                <div class="dropdownItem" onclick="selectAllContent()">
+                    Select All
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Format -->
+
+        <div class="menuItem">
+            Format
+
+            <div class="dropdown">
+
+                <div class="dropdownItem" onclick="sortExplorerTable(0)">
+                    Sort by Name
+                </div>
+
+                <div class="dropdownItem" onclick="sortExplorerTable(1)">
+                    Sort by Date Modified
+                </div>
+
+                <div class="dropdownItem" onclick="sortExplorerTable(2)">
+                    Sort by Type
+                </div>
+
+                <div class="dropdownItem" onclick="sortExplorerTable(3)">
+                    Sort by Size
+                </div>
+
+            </div>
+        </div>
+
+        <!-- View -->
+
+        <div class="menuItem">
+            View
+
+            <div class="dropdown">
+
+                <div class="dropdownItem" onclick="location.reload()">
+                    ⟳ Refresh
+                </div>
+
+                <hr>
+
+                <div class="dropdownItem" onclick="toggleAddressBar()">
+                    Show / Hide Address Bar
+                </div>
+
+                <div class="dropdownItem" onclick="toggleStatusBar()">
+                    Show / Hide Status Bar
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Help -->
+
+        <div class="menuItem">
+            Help
+
+            <div class="dropdown">
+
+                <a href="about/about.html">
+                    About Ryan's Archive
+                </a>
+
+                <hr>
+
+                <a href="logs/AboutLogs.html">
+                    About Logs
+                </a>
+
+                <hr>
+
+                <a href="about/Ryan.html">
+                    About Ryan
+                </a>
+
+            </div>
+        </div>
+
     </div>
 
     <!-- Explorer -->
