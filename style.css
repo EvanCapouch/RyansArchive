@@ -432,14 +432,14 @@ hr{
 
 .dropdownItem {
     display: block;
-    padding: 8px 12px;
+    padding: 8px 14px;
     color: white;
     text-decoration: none;
     cursor: pointer;
 }
 
 .dropdownItem:hover {
-    background: #0078d7;
+    background: #2b579a;
     color: white;
 }
 
