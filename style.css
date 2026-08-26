@@ -433,7 +433,7 @@ hr{
 .dropdownItem {
     display: block;
     padding: 8px 12px;
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
