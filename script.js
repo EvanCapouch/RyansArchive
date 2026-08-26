@@ -11,7 +11,7 @@ rows.forEach(row => {
 
     row.addEventListener("mouseleave", () => {
 
-        statusBar.textContent = "5 Items";
+        statusBar.textContent = "9 Items";
 
     });
 
