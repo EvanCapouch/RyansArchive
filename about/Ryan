@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AboutMyBrother.txt</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="viewer">
+<div class="viewerTitle">
+<span>📝 AboutMyBrother.txt - Notepad</span>
+<div class="windowButtons"><div class="button">—</div><div class="button">□</div><div class="button">✕</div></div>
+</div>
+
+<div class="menuBar">
+<div class="menuItem">File
+<div class="dropdown">
+<a href="../index.html">← Return to Ryan's Archive</a>
+<hr>
+<a href="../index.html">Close</a>
+</div>
+</div>
+<div class="menuItem">Edit</div>
+<div class="menuItem">Format</div>
+<div class="menuItem">View</div>
+<div class="menuItem">Help</div>
+</div>
+
+<div class="viewerContent">
+    <div class="addressBar">
+
+    <div class="navButtons">
+
+        <div class="navButton" onclick="history.back()">◀</div>
+
+        <div class="navButton" onclick="history.forward()">▶</div>
+
+        <div class="navButton" onclick="location.reload()">⟳</div>
+
+    </div>
+
+    <div class="pathBar">
+
+        📁 Ryan's Archive > about > AboutMyBrother.txt
+
+    </div>
+
+</div>
+<div class="notepadWindow">
+<pre class="notepadText">AboutMyBrother.txt
+
+------------------------------------------------------------
+
+If it wasn't already apparent to you, my brother is dead.
+
+He died from a self inflicted wound on March 13th.
+That's what detectives say.
+
+Could have been a day sooner or later. They don't know.
+We were gone to a concert. He didn't want to come.
+
+I see why now...
+
+
+My brother was a great guy - he really was.
+He liked playing board games and going for walks and music.
+He loved AJR, just like me.
+
+His favorite color was blue and he'd always make a point to me that
+aliens are real and that the JFK assassination of JFK was an inside
+job.
+
+Don't ask me how those things are related. Everytime we talked about
+our favorite colors he'd bring that up.
+
+Odd, I know, but hey, he was full of suprises.
+
+
+He was incredibly smart.
+He got accepted to MIT with a full ride straight out of highschool.
+
+I only wish I was like him in that way.
+
+He never finished his degree.
+Only got about a year into it before... well... before he died...
+
+
+We never put up an obituary for him, or even had a funeral for that
+matter.
+My mom never thought it was necessary.
+
+'We live in such a small town, hon. Everyone knew him here. Why waste
+all that money setting one up?'
+
+Yeah, sure thing.
+
+
+I just think she coulden't handle the fact that her son was gone
+forever - that she'd lost another child.
+
+Either that, or she was afraid of Jason coming back.
+
+
+Probably a bit of both.
+
+Jason is our dad. After some rather unfortunate events, we no longer
+see him. Probably for the better.
+
+
+Yeah...
+
+
+Anyways, that's a bit about my brother.
+If you have any other questions about him, email me or something.
+
+Thats all I've got.
+
+------------------------------------------------------------
+
+- Evan
+
+End of File</pre>
+</div>
+</div>
+
+<div class="statusBar">UTF-8    Windows (CRLF)    Ln 1, Col 1</div>
+</div>
+<script src="../script.js"></script>
+</body>
+</html>
