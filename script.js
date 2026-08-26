@@ -177,15 +177,13 @@ function toggleStatusBar() {
 
 function closeArchive() {
 
-    if (window.history.length > 1) {
+    const viewer = document.querySelector(".viewer");
 
-        history.back();
-
-    } else {
-
-        window.location.href = "/RyansArchive/";
-
+    if (viewer) {
+        viewer.style.display = "none";
     }
+
+    document.body.classList.add("archiveClosed");
 
 }
 

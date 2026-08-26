@@ -600,3 +600,7 @@ hr{
 .hidden {
     display: none !important;
 }
+
+.archiveClosed {
+    background: #008080;
+}
