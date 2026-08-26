@@ -231,3 +231,77 @@ function sortExplorerTable(columnIndex) {
     });
 
 }
+
+// ============================================
+// WORD WRAP
+// ============================================
+
+function toggleWordWrap() {
+
+    const text = document.querySelector(".notepadText");
+
+    if (!text) return;
+
+    text.classList.toggle("wordWrap");
+
+}
+
+// ============================================
+// FONT DIALOG
+// ============================================
+
+function openFontDialog() {
+
+    const dialog = document.getElementById("fontDialog");
+
+    if (!dialog) return;
+
+    dialog.classList.remove("hidden");
+
+}
+
+
+function closeFontDialog() {
+
+    const dialog = document.getElementById("fontDialog");
+
+    if (!dialog) return;
+
+    dialog.classList.add("hidden");
+
+}
+
+
+function applyFont() {
+
+    const text = document.querySelector(".notepadText");
+
+    if (!text) return;
+
+    const fontFamily =
+        document.getElementById("fontFamily").value;
+
+    const fontSize =
+        document.getElementById("fontSize").value;
+
+    const bold =
+        document.getElementById("fontBold").checked;
+
+    const italic =
+        document.getElementById("fontItalic").checked;
+
+
+    text.style.fontFamily = fontFamily;
+
+    text.style.fontSize = fontSize;
+
+    text.style.fontWeight =
+        bold ? "bold" : "normal";
+
+    text.style.fontStyle =
+        italic ? "italic" : "normal";
+
+
+    closeFontDialog();
+
+}
