@@ -541,10 +541,13 @@ hr{
 .navButton{
 
     width:28px;
+
     height:28px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     background:#2b2b2b;
@@ -557,7 +560,7 @@ hr{
 
     user-select:none;
 
-    transition:background .15s;
+    transition: background .15s;
 
 }
 
@@ -616,10 +619,6 @@ hr{
    FONT DIALOG
 ========================================= */
 
-/* =========================================
-   FONT DIALOG
-========================================= */
-
 .fontDialog {
 
     position: fixed;
@@ -634,7 +633,7 @@ hr{
 
     background: #f0f0f0;
 
-    color: black;
+    color: #000;
 
     border: 2px solid #555;
 
@@ -645,22 +644,20 @@ hr{
 }
 
 
-.fontDialog label {
-    color: black;
+/* Force all regular text inside the dialog to be dark */
+
+.fontDialog *,
+.fontDialog label,
+.fontDialog span,
+.fontDialog div,
+.fontDialog p {
+
+    color: #000;
+
 }
 
 
-.fontDialog select {
-    color: black;
-    background: white;
-}
-
-
-.fontDialog option {
-    color: black;
-    background: white;
-}
-
+/* Title bar should stay white */
 
 .fontTitleBar {
 
@@ -678,6 +675,12 @@ hr{
 
 }
 
+.fontTitleBar * {
+
+    color: white;
+
+}
+
 
 .fontCloseButton {
 
@@ -687,6 +690,8 @@ hr{
 
 }
 
+
+/* Main dialog content */
 
 .fontDialogContent {
 
@@ -708,8 +713,12 @@ hr{
 
     margin-bottom: 5px;
 
+    color: #000 !important;
+
 }
 
+
+/* Dropdowns */
 
 .fontOption select {
 
@@ -717,8 +726,25 @@ hr{
 
     padding: 5px;
 
+    color: #000 !important;
+
+    background: white;
+
+    border: 1px solid #777;
+
 }
 
+
+.fontOption option {
+
+    color: #000;
+
+    background: white;
+
+}
+
+
+/* Buttons */
 
 .fontButtons {
 
@@ -738,5 +764,7 @@ hr{
     padding: 5px;
 
     cursor: pointer;
+
+    color: #000;
 
 }
