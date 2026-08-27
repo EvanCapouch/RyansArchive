@@ -782,8 +782,6 @@ hr{
 
 .viewerImage img {
 
-    transition: transform 0.2s ease;
-
-    transform-origin: center center;
+    transition: max-width 0.2s ease;
 
 }

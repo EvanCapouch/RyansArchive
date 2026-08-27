@@ -310,7 +310,7 @@ function applyFont() {
 // IMAGE VIEWER
 // ============================================
 
-let imageZoom = 1;
+let imageZoom = 95;
 
 
 function zoomIn() {
@@ -319,9 +319,9 @@ function zoomIn() {
 
     if (!image) return;
 
-    imageZoom += 0.1;
+    imageZoom += 10;
 
-    image.style.transform = `scale(${imageZoom})`;
+    image.style.maxWidth = imageZoom + "%";
 
 }
 
@@ -332,14 +332,15 @@ function zoomOut() {
 
     if (!image) return;
 
-    imageZoom -= 0.1;
+    imageZoom -= 10;
 
-    // Prevent the image from becoming ridiculously tiny
-    if (imageZoom < 0.1) {
-        imageZoom = 0.1;
+    if (imageZoom < 10) {
+
+        imageZoom = 10;
+
     }
 
-    image.style.transform = `scale(${imageZoom})`;
+    image.style.maxWidth = imageZoom + "%";
 
 }
 
@@ -350,9 +351,9 @@ function actualSize() {
 
     if (!image) return;
 
-    imageZoom = 1;
+    imageZoom = 95;
 
-    image.style.transform = "scale(1)";
+    image.style.maxWidth = "95%";
 
 }
 
@@ -372,10 +373,14 @@ function copyImage() {
                 })
             ]);
 
+            alert("Image copied to clipboard.");
+
         })
         .catch(error => {
 
             console.error("Unable to copy image:", error);
+
+            alert("Unable to copy image.");
 
         });
 
