@@ -13,23 +13,132 @@
 </div>
 
 <div class="menuBar">
-<div class="menuItem">File
-<div class="dropdown">
-<a href="../index.html">← Null</a>
-<hr>
-<a href="">Null</a>
-<hr>
-<a href="">Null</a>
-</div>
-</div>
-<div class="menuItem">Edit</div>
-<div class="menuItem">Format</div>
-<div class="menuItem">View</div>
-<div class="menuItem">Help</div>
+
+    <!-- FILE -->
+
+    <div class="menuItem">
+        [Null]
+
+        <div class="dropdown">
+
+            <a href="../index.html">
+                [Null]
+            </a>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="closeArchive()">
+                [Null]
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EDIT -->
+
+    <div class="menuItem">
+        [Null]
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="copySelectedText()">
+                [Null]
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="selectAllContent()">
+                [Null]
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FORMAT -->
+
+    <div class="menuItem">
+        [Null]
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="toggleWordWrap()">
+                [Null]
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="openFontDialog()">
+                [Null]
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VIEW -->
+
+    <div class="menuItem">
+        [Null]
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="location.reload()">
+                [Null]
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="toggleAddressBar()">
+                [Null]
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="toggleStatusBar()">
+                [Null]
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HELP -->
+
+    <div class="menuItem">
+        [Null]
+
+        <div class="dropdown">
+
+            <a href="../about/about.html">
+                [Null]
+            </a>
+
+            <hr>
+
+            <a href="AboutLogs.html">
+                [Null]
+            </a>
+
+            <hr>
+
+            <a href="../about/Ryan.html">
+                [Null]
+            </a>
+
+        </div>
+
+    </div>
+
 </div>
 
 <div class="viewerContent">
-    <div class="addressBar">
+<div class="addressBar">
 
     <div class="navButtons">
 
@@ -170,6 +279,138 @@ End of File</pre>
 </div>
 
 <div class="statusBar">UTF-8    Windows (CRLF)    Ln 1, Col 1</div>
+</div>
+<!-- Font Dialog -->
+
+<div id="fontDialog" class="fontDialog hidden">
+
+    <div class="fontTitleBar">
+
+        <span>Font</span>
+
+        <div
+            class="fontCloseButton"
+            onclick="closeFontDialog()"
+        >
+            ✕
+        </div>
+
+    </div>
+
+
+    <div class="fontDialogContent">
+
+        <!-- Font Family -->
+
+        <div class="fontOption">
+
+            <label for="fontFamily">
+                [Null]
+            </label>
+
+            <select id="fontFamily">
+
+                <option value="Consolas">
+                    [Null]
+                </option>
+
+                <option value="Courier New">
+                    [Null]
+                </option>
+
+                <option value="Arial">
+                    [Null]
+                </option>
+
+                <option value="Times New Roman">
+                    [Null]
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Font Size -->
+
+        <div class="fontOption">
+
+            <label for="fontSize">
+                [Null]
+            </label>
+
+            <select id="fontSize">
+
+                <option value="12px">
+                    [Null]
+                </option>
+
+                <option value="14px" selected>
+                    [Null]
+                </option>
+
+                <option value="16px">
+                    [Null]
+                </option>
+
+                <option value="18px">
+                    [Null]
+                </option>
+
+                <option value="20px">
+                    [Null]
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Style -->
+
+        <div class="fontOption">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="fontBold"
+                >
+
+                [Null]
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="fontItalic"
+                >
+
+                [Null]
+
+            </label>
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="fontButtons">
+
+            <button onclick="applyFont()">
+                [Null]
+            </button>
+
+            <button onclick="closeFontDialog()">
+                [Null]
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
 <script src="../script.js"></script>
 </body>

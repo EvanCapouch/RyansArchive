@@ -13,20 +13,140 @@
 </div>
 
 <div class="menuBar">
-<div class="menuItem">File
-<div class="dropdown">
-<a href="../index.html">← Return to Home</a>
-<hr>
-<a href="log004.html">← Previous Log</a>
-<a href="log006.html">Next Log →</a>
-<hr>
-<a href="../index.html">Close</a>
-</div>
-</div>
-<div class="menuItem">Edit</div>
-<div class="menuItem">Format</div>
-<div class="menuItem">View</div>
-<div class="menuItem">Help</div>
+
+    <!-- FILE -->
+
+    <div class="menuItem">
+        File
+
+        <div class="dropdown">
+
+            <a href="../index.html">
+                Return to Home
+            </a>
+
+            <hr>
+
+            <a href="log004.html">
+                ← Previous log
+            </a>
+
+            <hr>
+
+            <a href="log006.html">
+                Next Log →
+            </a>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="closeArchive()">
+                Close Archive
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EDIT -->
+
+    <div class="menuItem">
+        Edit
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="copySelectedText()">
+                Copy
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="selectAllContent()">
+                Select All
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FORMAT -->
+
+    <div class="menuItem">
+        Format
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="toggleWordWrap()">
+                Word Wrap
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="openFontDialog()">
+                Font...
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VIEW -->
+
+    <div class="menuItem">
+        View
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="location.reload()">
+                ⟳ Refresh
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="toggleAddressBar()">
+                Show / Hide Address Bar
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="toggleStatusBar()">
+                Show / Hide Status Bar
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HELP -->
+
+    <div class="menuItem">
+        Help
+
+        <div class="dropdown">
+
+            <a href="../about/about.html">
+                About Ryan's Archive
+            </a>
+
+            <hr>
+
+            <a href="AboutLogs.html">
+                About Logs
+            </a>
+
+            <hr>
+
+            <a href="../about/Ryan.html">
+                About Ryan
+            </a>
+
+        </div>
+
+    </div>
+
 </div>
 
 <div class="viewerContent">
@@ -67,16 +187,16 @@ They'd probably call it something stupid like "Sargassoland."
 What a bunch of freaks.
 
 
-I feel kinda crazy. Maybe I am?? I talked to my thearapist about my brother.
+I feel kinda crazy. Maybe I am?? I talked to my therapist about my brother.
 I also talked about the strange stuff that keeps happening.
 
 She says there's nothing wrong and that feelings like this sometimes happen after
-a signifigant loss.
+a significant loss.
 
 She doesn't understand.
 
 
-I'm gonna set a trap - A video trap, persay.
+I'm gonna set a trap - A video trap, per say.
 If it proves anything worthwhile, you'll see.
 
 If not...
@@ -92,7 +212,139 @@ End of File</pre>
 </div>
 </div>
 
-<div class="statusBar">Ln 1, Col 1    Windows (CRLF)    UTF-8</div>
+<div class="statusBar">UTF-8    Windows (CRLF)    Ln 1, Col 1</div>
+</div>
+<!-- Font Dialog -->
+
+<div id="fontDialog" class="fontDialog hidden">
+
+    <div class="fontTitleBar">
+
+        <span>Font</span>
+
+        <div
+            class="fontCloseButton"
+            onclick="closeFontDialog()"
+        >
+            ✕
+        </div>
+
+    </div>
+
+
+    <div class="fontDialogContent">
+
+        <!-- Font Family -->
+
+        <div class="fontOption">
+
+            <label for="fontFamily">
+                Font:
+            </label>
+
+            <select id="fontFamily">
+
+                <option value="Consolas">
+                    Consolas
+                </option>
+
+                <option value="Courier New">
+                    Courier New
+                </option>
+
+                <option value="Arial">
+                    Arial
+                </option>
+
+                <option value="Times New Roman">
+                    Times New Roman
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Font Size -->
+
+        <div class="fontOption">
+
+            <label for="fontSize">
+                Size:
+            </label>
+
+            <select id="fontSize">
+
+                <option value="12px">
+                    12
+                </option>
+
+                <option value="14px" selected>
+                    14
+                </option>
+
+                <option value="16px">
+                    16
+                </option>
+
+                <option value="18px">
+                    18
+                </option>
+
+                <option value="20px">
+                    20
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Style -->
+
+        <div class="fontOption">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="fontBold"
+                >
+
+                Bold
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="fontItalic"
+                >
+
+                Italic
+
+            </label>
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="fontButtons">
+
+            <button onclick="applyFont()">
+                OK
+            </button>
+
+            <button onclick="closeFontDialog()">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
 <script src="../script.js"></script>
 </body>
