@@ -305,3 +305,78 @@ function applyFont() {
     closeFontDialog();
 
 }
+
+// ============================================
+// IMAGE VIEWER
+// ============================================
+
+let imageZoom = 1;
+
+
+function zoomIn() {
+
+    const image = document.getElementById("viewedImage");
+
+    if (!image) return;
+
+    imageZoom += 0.1;
+
+    image.style.transform = `scale(${imageZoom})`;
+
+}
+
+
+function zoomOut() {
+
+    const image = document.getElementById("viewedImage");
+
+    if (!image) return;
+
+    imageZoom -= 0.1;
+
+    // Prevent the image from becoming ridiculously tiny
+    if (imageZoom < 0.1) {
+        imageZoom = 0.1;
+    }
+
+    image.style.transform = `scale(${imageZoom})`;
+
+}
+
+
+function actualSize() {
+
+    const image = document.getElementById("viewedImage");
+
+    if (!image) return;
+
+    imageZoom = 1;
+
+    image.style.transform = "scale(1)";
+
+}
+
+function copyImage() {
+
+    const image = document.getElementById("viewedImage");
+
+    if (!image) return;
+
+    fetch(image.src)
+        .then(response => response.blob())
+        .then(blob => {
+
+            navigator.clipboard.write([
+                new ClipboardItem({
+                    [blob.type]: blob
+                })
+            ]);
+
+        })
+        .catch(error => {
+
+            console.error("Unable to copy image:", error);
+
+        });
+
+}

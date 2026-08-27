@@ -33,14 +33,120 @@
 
     <!-- Menu Bar -->
 
-    <div class="menuBar">
+<div class="menuBar">
 
-        <span>File</span>
-        <span>Edit</span>
-        <span>View</span>
-        <span>Help</span>
+    <!-- FILE -->
+
+    <div class="menuItem">
+        File
+
+        <div class="dropdown">
+
+            <a href="indexS.html">
+                ← Return to PHOTO_ARCHIVE
+            </a>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="closeArchive()">
+                Close
+            </div>
+
+        </div>
 
     </div>
+
+
+    <!-- EDIT -->
+
+    <div class="menuItem">
+        Edit
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="copyImage()">
+                Copy Image
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VIEW -->
+
+    <div class="menuItem">
+        View
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="location.reload()">
+                ⟳ Refresh
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="toggleAddressBar()">
+                Show / Hide Address Bar
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="toggleStatusBar()">
+                Show / Hide Status Bar
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="zoomIn()">
+                Zoom In
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="zoomOut()">
+                Zoom Out
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="actualSize()">
+                Actual Size
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HELP -->
+
+    <div class="menuItem">
+        Help
+
+        <div class="dropdown">
+
+            <a href="../about/about.html">
+                About Ryan's Archive
+            </a>
+
+            <hr>
+
+            <a href="indexS.html">
+                About Images
+            </a>
+
+            <hr>
+
+            <a href="../about/Ryan.html">
+                About Ryan
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
 
     <!-- Main Content -->
 
@@ -60,7 +166,7 @@
 
                 <div class="pathBar">
 
-                    📁 Ryan's Archive > images > world_spawn.png
+                    📁 Ryan's Archive > images > home.png
 
                 </div>
 
@@ -82,7 +188,7 @@
 
         <div class="viewerImage">
 
-            <img src="screenshots/home.png" alt="Our House">
+            <img id="viewedImage" src="screenshots/home.png" alt="Our House">
 
         </div>
 
