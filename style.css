@@ -616,6 +616,10 @@ hr{
    FONT DIALOG
 ========================================= */
 
+/* =========================================
+   FONT DIALOG
+========================================= */
+
 .fontDialog {
 
     position: fixed;
@@ -630,12 +634,31 @@ hr{
 
     background: #f0f0f0;
 
+    color: black;
+
     border: 2px solid #555;
 
     box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
 
     z-index: 9999;
 
+}
+
+
+.fontDialog label {
+    color: black;
+}
+
+
+.fontDialog select {
+    color: black;
+    background: white;
+}
+
+
+.fontDialog option {
+    color: black;
+    background: white;
 }
 
 
