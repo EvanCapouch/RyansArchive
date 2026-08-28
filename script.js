@@ -373,14 +373,10 @@ function copyImage() {
                 })
             ]);
 
-            alert("Image copied to clipboard.");
-
         })
         .catch(error => {
 
             console.error("Unable to copy image:", error);
-
-            alert("Unable to copy image.");
 
         });
 

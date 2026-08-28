@@ -33,14 +33,114 @@
 
     <!-- Menu Bar -->
 
-    <div class="menuBar">
+<div class="menuBar">
 
-        <span>File</span>
-        <span>Edit</span>
-        <span>View</span>
-        <span>Help</span>
+    <!-- FILE -->
+
+    <div class="menuItem">
+        File
+
+        <div class="dropdown">
+
+            <a href="indexD.html">
+                ← Return to DOWNLOADS
+            </a>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="closeArchive()">
+                Close Archive
+            </div>
+
+        </div>
 
     </div>
+
+
+    <!-- EDIT -->
+
+    <div class="menuItem">
+        Edit
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="copyImage()">
+                Copy Image
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VIEW -->
+
+    <div class="menuItem">
+        View
+
+        <div class="dropdown">
+
+            <div class="dropdownItem" onclick="location.reload()">
+                ⟳ Refresh
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="toggleAddressBar()">
+                Show / Hide Address Bar
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="toggleStatusBar()">
+                Show / Hide Status Bar
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="zoomIn()">
+                Zoom In
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="zoomOut()">
+                Zoom Out
+            </div>
+
+            <hr>
+
+            <div class="dropdownItem" onclick="actualSize()">
+                Actual Size
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HELP -->
+
+    <div class="menuItem">
+        Help
+
+        <div class="dropdown">
+
+            <a href="../about/about.html">
+                About Ryan's Archive
+            </a>
+
+            <hr>
+
+            <a href="../about/Ryan.html">
+                About Ryan
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
 
     <!-- Main Content -->
 
@@ -60,12 +160,12 @@
 
                 <div class="pathBar">
 
-                    📁 Ryan's Archive > Images > world_spawn.png
+                    📁 Ryan's Archive > downloads > AJR_Wallpaper.webp
 
                 </div>
 
             </div>
-        
+
         <div class="viewerInfo">
 
             <h2 style="margin-top:0;">Image Information</h2>
@@ -80,7 +180,7 @@
 
         <div class="viewerImage">
 
-            <img src="AJR_Wallpaper.webp" alt="Wallpaper">
+            <img id="viewedImage" src="AJR_Wallpaper.webp" alt="Wallpaper">
 
         </div>
 
