@@ -5,26 +5,33 @@
 const rows = document.querySelectorAll(".explorer tr[data-status]");
 const statusBar = document.getElementById("statusBar");
 
+// Remember whatever the page originally says.
+// This means index.html, indexS.html, and indexD.html
+// can all have different item counts.
+
+const defaultStatus = statusBar
+    ? statusBar.textContent.trim()
+    : "";
+
 rows.forEach(row => {
 
     row.addEventListener("mouseenter", () => {
 
-        if (statusBar) {
-            statusBar.textContent = row.dataset.status;
-        }
+        if (!statusBar) return;
+
+        statusBar.textContent = row.dataset.status;
 
     });
 
     row.addEventListener("mouseleave", () => {
 
-        if (statusBar) {
-            statusBar.textContent = "9 Items";
-        }
+        if (!statusBar) return;
+
+        statusBar.textContent = defaultStatus;
 
     });
 
 });
-
 
 // ============================================
 // ARCHIVE SEARCH
