@@ -382,3 +382,42 @@ function copyImage() {
         });
 
 }
+
+// ============================================
+// DESKTOP: OPEN RYAN'S ARCHIVE
+// ============================================
+
+function openArchive() {
+
+    window.location.href = "/RyansArchive/index.html";
+
+}
+
+// ============================================
+// DESKTOP CLOCK
+// ============================================
+
+function updateDesktopClock() {
+
+    const clock = document.getElementById("desktopClock");
+
+    if (!clock) return;
+
+    const now = new Date();
+
+    clock.textContent = now.toLocaleTimeString([], {
+        hour: "numeric",
+        minute: "2-digit"
+    });
+
+}
+
+
+// Update immediately when the page loads
+
+updateDesktopClock();
+
+
+// Update every minute
+
+setInterval(updateDesktopClock, 60000);
