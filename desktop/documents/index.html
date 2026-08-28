@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Documents</title>
+
+    <link rel="stylesheet" href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="viewer">
+
+    <!-- Title Bar -->
+
+    <div class="viewerTitle">
+
+        <span>📁 Documents</span>
+
+        <div class="windowButtons">
+
+            <div class="button">—</div>
+            <div class="button">□</div>
+            <div class="button">✕</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Menu Bar -->
+
+    <div class="menuBar">
+
+
+        <!-- FILE -->
+
+        <div class="menuItem">
+
+            File
+
+            <div class="dropdown">
+
+                <a href="../../index.html">
+                    ← Return to Ryan's Archive
+                </a>
+
+                <hr>
+
+                <div class="dropdownItem" onclick="closeArchive()">
+                    Close
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EDIT -->
+
+        <div class="menuItem">
+
+            Edit
+
+            <div class="dropdown">
+
+                <div class="dropdownItem" onclick="copySelectedText()">
+                    Copy
+                </div>
+
+                <hr>
+
+                <div class="dropdownItem" onclick="selectAllContent()">
+                    Select All
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMAT -->
+
+        <div class="menuItem">
+
+            Format
+
+            <div class="dropdown">
+
+                <div class="dropdownItem">
+                    Sort by Name
+                </div>
+
+                <hr>
+
+                <div class="dropdownItem">
+                    Sort by Date Modified
+                </div>
+
+                <hr>
+
+                <div class="dropdownItem">
+                    Sort by Type
+                </div>
+
+                <hr>
+
+                <div class="dropdownItem">
+                    Sort by Size
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIEW -->
+
+        <div class="menuItem">
+
+            View
+
+            <div class="dropdown">
+
+                <div class="dropdownItem" onclick="location.reload()">
+                    ⟳ Refresh
+                </div>
+
+                <hr>
+
+                <div class="dropdownItem" onclick="toggleAddressBar()">
+                    Show / Hide Address Bar
+                </div>
+
+                <hr>
+
+                <div class="dropdownItem" onclick="toggleStatusBar()">
+                    Show / Hide Status Bar
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HELP -->
+
+        <div class="menuItem">
+
+            Help
+
+            <div class="dropdown">
+
+                <a href="../../about/about.html">
+                    About Ryan's Archive
+                </a>
+
+                <hr>
+
+                <a href="../../logs/AboutLogs.html">
+                    About Logs
+                </a>
+
+                <hr>
+
+                <a href="../../about/Ryan.html">
+                    About Ryan
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Main Area -->
+
+    <div class="mainArea">
+
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <h3>Ryan's Computer</h3>
+
+
+            <a href="../desktop.html">
+
+                <span class="navIcon">🖥️</span>
+
+                Desktop
+
+            </a>
+
+
+            <a href="index.html">
+
+                <span class="navIcon">📁</span>
+
+                Documents
+
+            </a>
+
+
+            <a href="../../index.html">
+
+                <span class="navIcon">📦</span>
+
+                Ryan's Archive
+
+            </a>
+
+        </div>
+
+
+        <!-- Main Content -->
+
+        <div class="viewerContent">
+
+
+            <!-- Address Bar -->
+
+            <div class="addressBar">
+
+                <div class="navButtons">
+
+                    <div
+                        class="navButton"
+                        onclick="history.back()"
+                    >
+                        ◀
+                    </div>
+
+                    <div
+                        class="navButton"
+                        onclick="history.forward()"
+                    >
+                        ▶
+                    </div>
+
+                    <div
+                        class="navButton"
+                        onclick="location.reload()"
+                    >
+                        ⟳
+                    </div>
+
+                </div>
+
+
+                <div class="pathBar">
+
+                    📁 Ryan's Computer > Documents
+
+                </div>
+
+            </div>
+
+
+            <h1>Documents</h1>
+
+
+            <p>
+                Files and documents from Ryan's computer.
+            </p>
+
+
+            <hr>
+
+
+            <!-- Explorer Table -->
+
+            <table class="explorer">
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Date Modified</th>
+
+                    <th>Type</th>
+
+                    <th>Size</th>
+
+                </tr>
+
+
+                <tr data-status="Homework • File Folder">
+
+                    <td>
+
+                        📁
+
+                        <span>
+                            Homework
+                        </span>
+
+                    </td>
+
+                    <td>
+                        05/12/2026 6:21 PM
+                    </td>
+
+                    <td>
+                        File Folder
+                    </td>
+
+                    <td>
+                        8.4 MB
+                    </td>
+
+                </tr>
+
+
+                <tr data-status="Personal • File Folder">
+
+                    <td>
+
+                        📁
+
+                        <span>
+                            Personal
+                        </span>
+
+                    </td>
+
+                    <td>
+                        04/30/2026 9:13 PM
+                    </td>
+
+                    <td>
+                        File Folder
+                    </td>
+
+                    <td>
+                        1.2 MB
+                    </td>
+
+                </tr>
+
+
+                <tr data-status="Minecraft Notes.txt • Text Document">
+
+                    <td>
+
+                        📄
+
+                        <span>
+                            Minecraft Notes.txt
+                        </span>
+
+                    </td>
+
+                    <td>
+                        05/16/2026 11:41 PM
+                    </td>
+
+                    <td>
+                        Text Document
+                    </td>
+
+                    <td>
+                        3 KB
+                    </td>
+
+                </tr>
+
+
+                <tr data-status="Chess Notes.txt • Text Document">
+
+                    <td>
+
+                        📄
+
+                        <span>
+                            Chess Notes.txt
+                        </span>
+
+                    </td>
+
+                    <td>
+                        04/18/2026 8:11 PM
+                    </td>
+
+                    <td>
+                        Text Document
+                    </td>
+
+                    <td>
+                        2 KB
+                    </td>
+
+                </tr>
+
+
+                <tr data-status="Things To Remember.txt • Text Document">
+
+                    <td>
+
+                        📄
+
+                        <span>
+                            Things To Remember.txt
+                        </span>
+
+                    </td>
+
+                    <td>
+                        05/11/2026 7:38 PM
+                    </td>
+
+                    <td>
+                        Text Document
+                    </td>
+
+                    <td>
+                        1 KB
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- Status Bar -->
+
+    <div
+        class="statusBar"
+        id="statusBar"
+    >
+
+        5 Items
+
+    </div>
+
+</div>
+
+
+<script src="../../script.js"></script>
+
+</body>
+
+</html>

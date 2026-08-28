@@ -497,3 +497,14 @@ document.addEventListener("click", function (event) {
     menu.classList.add("hidden");
 
 });
+
+// ============================================
+// DESKTOP: OPEN DOCUMENTS
+// ============================================
+
+function openDocuments() {
+
+    window.location.href =
+        "/RyansArchive/desktop/documents/index.html";
+
+}
