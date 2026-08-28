@@ -421,3 +421,46 @@ updateDesktopClock();
 // Update every minute
 
 setInterval(updateDesktopClock, 60000);
+
+// ============================================
+// DESKTOP ICON SELECTION
+// ============================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const icons = document.querySelectorAll(".desktopIcon");
+    const desktop = document.querySelector(".desktop");
+
+    if (!icons.length || !desktop) return;
+
+
+    icons.forEach(icon => {
+
+        icon.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            icons.forEach(otherIcon => {
+
+                otherIcon.classList.remove("selected");
+
+            });
+
+            icon.classList.add("selected");
+
+        });
+
+    });
+
+
+    desktop.addEventListener("click", function () {
+
+        icons.forEach(icon => {
+
+            icon.classList.remove("selected");
+
+        });
+
+    });
+
+});

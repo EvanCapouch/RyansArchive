@@ -950,3 +950,35 @@ hr{
     color: #ddd;
 
 }
+
+/* =========================================
+   DESKTOP ICON SELECTION
+========================================= */
+
+.desktopIcon {
+
+    border: 1px solid transparent;
+
+    border-radius: 4px;
+
+    padding: 4px;
+
+    box-sizing: border-box;
+
+}
+
+
+.desktopIcon:hover {
+
+    background: rgba(255,255,255,0.10);
+
+}
+
+
+.desktopIcon.selected {
+
+    background: rgba(0,120,215,0.45);
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+}
