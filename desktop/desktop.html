@@ -69,13 +69,44 @@
 
     </div>
 
+    <!-- START MENU -->
+
+    <div class="startMenu hidden" id="startMenu">
+
+        <div class="startHeader">
+            Ryan's Computer
+        </div>
+
+        <div class="startItem" onclick="openArchive()">
+            📁 Ryan's Archive
+        </div>
+
+        <div class="startItem">
+            📄 Documents
+        </div>
+
+        <div class="startItem">
+            🎮 Programs
+        </div>
+
+        <hr>
+
+        <div class="startItem">
+            ⚙ Settings
+        </div>
+
+        <div class="startItem">
+            ⏻ Shut Down
+        </div>
+
+    </div>
 
     <!-- TASKBAR -->
 
     <div class="taskbar">
 
 
-        <div class="startButton">
+        <div class="startButton" onclick="toggleStartMenu(event)">
 
             ⊞ Start
 

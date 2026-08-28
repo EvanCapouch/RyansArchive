@@ -982,3 +982,73 @@ hr{
     border: 1px solid rgba(255,255,255,0.35);
 
 }
+
+/* =========================================
+   START MENU
+========================================= */
+
+.startMenu {
+
+    position: absolute;
+
+    left: 8px;
+
+    bottom: 42px;
+
+    width: 270px;
+
+    background: #202020;
+
+    border: 1px solid #555;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.6);
+
+    z-index: 5000;
+
+    color: white;
+
+}
+
+
+.startHeader {
+
+    padding: 14px;
+
+    background: #181818;
+
+    border-bottom: 1px solid #444;
+
+    font-weight: bold;
+
+}
+
+
+.startItem {
+
+    padding: 10px 14px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+.startItem:hover {
+
+    background: #2b579a;
+
+    color: white;
+
+}
+
+
+.startMenu hr {
+
+    margin: 4px 0;
+
+    border: none;
+
+    border-top: 1px solid #444;
+
+}

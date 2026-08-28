@@ -464,3 +464,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+// ============================================
+// START MENU
+// ============================================
+
+function toggleStartMenu(event) {
+
+    if (event) {
+        event.stopPropagation();
+    }
+
+    const menu = document.getElementById("startMenu");
+
+    if (!menu) return;
+
+    menu.classList.toggle("hidden");
+
+}
+
+
+// Close the Start menu when clicking elsewhere
+
+document.addEventListener("click", function (event) {
+
+    const menu = document.getElementById("startMenu");
+
+    if (!menu) return;
+
+    if (menu.contains(event.target)) return;
+
+    menu.classList.add("hidden");
+
+});
