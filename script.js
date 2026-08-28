@@ -184,13 +184,7 @@ function toggleStatusBar() {
 
 function closeArchive() {
 
-    const viewer = document.querySelector(".viewer");
-
-    if (viewer) {
-        viewer.style.display = "none";
-    }
-
-    document.body.classList.add("archiveClosed");
+    window.location.href = "/RyansArchive/desktop/desktop.html";
 
 }
 
