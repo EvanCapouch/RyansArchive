@@ -511,12 +511,17 @@ function appBack() {
     const currentPath = window.location.pathname;
 
 
-    // Ryan's Archive application
+    // ========================================
+    // RYAN'S ARCHIVE
+    // ========================================
 
     if (app === "archive") {
 
-        if (currentPath.endsWith("/index.html") ||
-            currentPath.endsWith("/RyansArchive/")) {
+        // Do not allow Back to leave the archive.
+        if (
+            currentPath === "/RyansArchive/" ||
+            currentPath.endsWith("/RyansArchive/index.html")
+        ) {
 
             return;
 
@@ -525,12 +530,17 @@ function appBack() {
     }
 
 
-    // Documents application
+    // ========================================
+    // DOCUMENTS
+    // ========================================
 
     if (app === "documents") {
 
-        if (currentPath.includes("/desktop/documents/") &&
-            currentPath.endsWith("/index.html")) {
+        // Do not allow Back to leave Documents.
+        if (
+            currentPath.includes("/desktop/documents/") &&
+            currentPath.endsWith("/index.html")
+        ) {
 
             return;
 
@@ -539,7 +549,9 @@ function appBack() {
     }
 
 
-    // Normal navigation inside an application
+    // ========================================
+    // NORMAL APP NAVIGATION
+    // ========================================
 
     if (window.history.length > 1) {
 
