@@ -499,6 +499,57 @@ document.addEventListener("click", function (event) {
 });
 
 // ============================================
+// APPLICATION NAVIGATION
+// ============================================
+
+function appBack() {
+
+    const app = document.body.dataset.app;
+
+    if (!app) return;
+
+    const currentPath = window.location.pathname;
+
+
+    // Ryan's Archive application
+
+    if (app === "archive") {
+
+        if (currentPath.endsWith("/index.html") ||
+            currentPath.endsWith("/RyansArchive/")) {
+
+            return;
+
+        }
+
+    }
+
+
+    // Documents application
+
+    if (app === "documents") {
+
+        if (currentPath.includes("/desktop/documents/") &&
+            currentPath.endsWith("/index.html")) {
+
+            return;
+
+        }
+
+    }
+
+
+    // Normal navigation inside an application
+
+    if (window.history.length > 1) {
+
+        history.back();
+
+    }
+
+}
+
+// ============================================
 // DESKTOP: OPEN DOCUMENTS
 // ============================================
 
