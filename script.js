@@ -499,69 +499,6 @@ document.addEventListener("click", function (event) {
 });
 
 // ============================================
-// APPLICATION NAVIGATION
-// ============================================
-
-function appBack() {
-
-    const app = document.body.dataset.app;
-
-    if (!app) return;
-
-    const currentPath = window.location.pathname;
-
-
-    // ========================================
-    // RYAN'S ARCHIVE
-    // ========================================
-
-    if (app === "archive") {
-
-        // Do not allow Back to leave the archive.
-        if (
-            currentPath === "/RyansArchive/" ||
-            currentPath.endsWith("/RyansArchive/index.html")
-        ) {
-
-            return;
-
-        }
-
-    }
-
-
-    // ========================================
-    // DOCUMENTS
-    // ========================================
-
-    if (app === "documents") {
-
-        // Do not allow Back to leave Documents.
-        if (
-            currentPath.includes("/desktop/documents/") &&
-            currentPath.endsWith("/index.html")
-        ) {
-
-            return;
-
-        }
-
-    }
-
-
-    // ========================================
-    // NORMAL APP NAVIGATION
-    // ========================================
-
-    if (window.history.length > 1) {
-
-        history.back();
-
-    }
-
-}
-
-// ============================================
 // DESKTOP: OPEN DOCUMENTS
 // ============================================
 
@@ -569,5 +506,101 @@ function openDocuments() {
 
     window.location.href =
         "/RyansArchive/desktop/documents/index.html";
+
+}
+
+// ============================================
+// APPLICATION NAVIGATION
+// ============================================
+
+function appBack() {
+
+    const currentPath = window.location.pathname;
+    const referrer = document.referrer;
+
+    // If there is no previous page, there is nowhere to go.
+    if (!referrer) {
+        return;
+    }
+
+    let referrerURL;
+
+    try {
+
+        referrerURL = new URL(referrer);
+
+    } catch (error) {
+
+        return;
+
+    }
+
+
+    // ========================================
+    // RYAN'S ARCHIVE BOUNDARY
+    // ========================================
+
+    const archivePages = [
+        "/RyansArchive/",
+        "/RyansArchive/index.html",
+        "/RyansArchive/logs/",
+        "/RyansArchive/images/",
+        "/RyansArchive/downloads/",
+        "/RyansArchive/about/",
+        "/RyansArchive/data/"
+    ];
+
+
+    // ========================================
+    // DOCUMENTS BOUNDARY
+    // ========================================
+
+    const documentsPath = "/RyansArchive/desktop/documents/";
+
+
+    // ========================================
+    // DOCUMENTS APP
+    // ========================================
+
+    if (currentPath.includes(documentsPath)) {
+
+        // If the previous page was outside Documents,
+        // don't leave the application.
+
+        if (!referrerURL.pathname.includes(documentsPath)) {
+
+            return;
+
+        }
+
+    }
+
+
+    // ========================================
+    // ARCHIVE APP
+    // ========================================
+
+    if (currentPath.startsWith("/RyansArchive/")) {
+
+        const wasInsideArchive = archivePages.some(path =>
+            referrerURL.pathname.startsWith(path)
+        );
+
+        // Don't leave Ryan's Archive for an outside page.
+
+        if (!wasInsideArchive) {
+
+            return;
+
+        }
+
+    }
+
+
+    // ========================================
+    // NORMAL BACK NAVIGATION
+    // ========================================
+
+    history.back();
 
 }
