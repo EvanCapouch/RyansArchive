@@ -516,60 +516,70 @@ function openDocuments() {
 function appBack() {
 
     const currentPath = window.location.pathname;
-    const referrer = document.referrer;
 
-    // If there is no previous page, there is nowhere to go.
-    if (!referrer) {
-        return;
-    }
+    // Normalize the current path so both
+    // /RyansArchive/ and /RyansArchive/index.html
+    // are treated as the archive's home.
+    const normalizedPath =
+        currentPath.replace(/\/+$/, "");
 
-    let referrerURL;
+    const archiveRoot = "/RyansArchive";
+    const archiveHome = [
+        archiveRoot,
+        archiveRoot + "/index.html"
+    ];
 
-    try {
-
-        referrerURL = new URL(referrer);
-
-    } catch (error) {
-
-        return;
-
-    }
-
-
-    // ========================================
-    // RYAN'S ARCHIVE BOUNDARY
-    // ========================================
-
-    const archivePages = [
-        "/RyansArchive/",
-        "/RyansArchive/index.html",
-        "/RyansArchive/logs/",
-        "/RyansArchive/images/",
-        "/RyansArchive/downloads/",
-        "/RyansArchive/about/",
-        "/RyansArchive/data/"
+    const documentsRoot = [
+        archiveRoot + "/desktop/documents",
+        archiveRoot + "/desktop/documents/index.html"
     ];
 
 
     // ========================================
-    // DOCUMENTS BOUNDARY
+    // APPLICATION BOUNDARIES
     // ========================================
 
-    const documentsPath = "/RyansArchive/desktop/documents/";
+    // Do not allow Back to leave Ryan's Archive.
+    if (archiveHome.includes(normalizedPath)) {
+        return;
+    }
+
+    // Do not allow Back to leave Documents.
+    if (documentsRoot.includes(normalizedPath)) {
+        return;
+    }
 
 
     // ========================================
-    // DOCUMENTS APP
+    // USE NORMAL BROWSER HISTORY WHEN SAFE
     // ========================================
 
-    if (currentPath.includes(documentsPath)) {
+    const referrer = document.referrer;
 
-        // If the previous page was outside Documents,
-        // don't leave the application.
+    if (referrer) {
 
-        if (!referrerURL.pathname.includes(documentsPath)) {
+        try {
 
-            return;
+            const referrerURL = new URL(referrer);
+
+            const sameOrigin =
+                referrerURL.origin === window.location.origin;
+
+            const insideRyanArchive =
+                referrerURL.pathname.startsWith(archiveRoot);
+
+            if (sameOrigin &&
+                insideRyanArchive &&
+                window.history.length > 1) {
+
+                history.back();
+                return;
+
+            }
+
+        } catch (error) {
+
+            // Fall through to the application fallback below.
 
         }
 
@@ -577,30 +587,61 @@ function appBack() {
 
 
     // ========================================
-    // ARCHIVE APP
+    // APPLICATION-SAFE FALLBACKS
     // ========================================
 
-    if (currentPath.startsWith("/RyansArchive/")) {
+    // Logs -> About Logs
+    if (currentPath.includes("/logs/")) {
 
-        const wasInsideArchive = archivePages.some(path =>
-            referrerURL.pathname.startsWith(path)
-        );
+        window.location.href =
+            archiveRoot + "/logs/AboutLogs.html";
 
-        // Don't leave Ryan's Archive for an outside page.
-
-        if (!wasInsideArchive) {
-
-            return;
-
-        }
+        return;
 
     }
 
+    // Image viewers -> Photo Archive
+    if (currentPath.includes("/images/") &&
+        !currentPath.endsWith("/indexS.html")) {
 
-    // ========================================
-    // NORMAL BACK NAVIGATION
-    // ========================================
+        window.location.href =
+            archiveRoot + "/images/indexS.html";
 
-    history.back();
+        return;
+
+    }
+
+    // Download viewers -> Downloads
+    if (currentPath.includes("/downloads/") &&
+        !currentPath.endsWith("/indexD.html")) {
+
+        window.location.href =
+            archiveRoot + "/downloads/indexD.html";
+
+        return;
+
+    }
+
+    // About / Data / Search -> Archive home
+    if (currentPath.includes("/about/") ||
+        currentPath.includes("/data/") ||
+        currentPath.endsWith("/search.html")) {
+
+        window.location.href =
+            archiveRoot + "/index.html";
+
+        return;
+
+    }
+
+    // Documents sub-pages -> Documents home
+    if (currentPath.includes("/desktop/documents/")) {
+
+        window.location.href =
+            archiveRoot + "/desktop/documents/index.html";
+
+        return;
+
+    }
 
 }
