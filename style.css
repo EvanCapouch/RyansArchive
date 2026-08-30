@@ -1082,3 +1082,32 @@ hr{
     border-top: 1px solid #444;
 
 }
+
+/* =========================================
+   WINDOW CONTROLS
+========================================= */
+
+.windowMinimized {
+
+    display: none !important;
+
+}
+
+
+.windowMaximized {
+
+    position: fixed !important;
+
+    top: 0 !important;
+
+    left: 0 !important;
+
+    width: 100vw !important;
+
+    height: 100vh !important;
+
+    margin: 0 !important;
+
+    z-index: 9999 !important;
+
+}

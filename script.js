@@ -645,3 +645,59 @@ function appBack() {
     }
 
 }
+
+// ============================================
+// WINDOW CONTROLS
+// ============================================
+
+function minimizeWindow() {
+
+    const viewer = document.querySelector(".viewer");
+
+    if (!viewer) return;
+
+    viewer.classList.add("windowMinimized");
+
+}
+
+
+function toggleMaximize() {
+
+    const viewer = document.querySelector(".viewer");
+
+    if (!viewer) return;
+
+    viewer.classList.toggle("windowMaximized");
+
+}
+
+
+function closeWindow() {
+
+    const viewer = document.querySelector(".viewer");
+
+    if (!viewer) return;
+
+    // If this is Ryan's Archive, return to the desktop.
+    if (document.body.dataset.app === "archive") {
+
+        window.location.href = "/RyansArchive/desktop/desktop.html";
+
+        return;
+
+    }
+
+    // If this is the Documents application,
+    // return to the desktop.
+    if (document.body.dataset.app === "documents") {
+
+        window.location.href = "/RyansArchive/desktop/desktop.html";
+
+        return;
+
+    }
+
+    // Otherwise, use our normal application navigation.
+    appBack();
+
+}
